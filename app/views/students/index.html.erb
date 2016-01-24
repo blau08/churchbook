@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <header class="jumbotron hero-spacer text-center">
+      <h1>ChurchBook</h1>
+      <p>A look back at our journey together.</p>
+      <% if current_user %>
+        <%= link_to "New Student", new_student_path, class: "btn btn-primary" %>
+      <% end %>
+    </header>
+  </div>
+
+  <div class="row text-center">
+    <% @students.each do |student| %>
+    <div class="col-md-3 col-sm-6 hero-feature">
+      <div class="thumbnail">
+        <%= image_tag student.image.url(:large) %>
+        <div class="caption">
+          <%= link_to student.firstname + " " + student.lastname, student_path(student) %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <hr>
+
+</div>

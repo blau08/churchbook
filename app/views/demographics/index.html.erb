@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+    <header class="jumbotron hero-spacer text-center">
+      <h1>Demographics</h1>
+      <p>A look at our church body</p>
+    </header>
+  </div>
+  <div class="row text-center">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="text-center"><%= sortable "id ", "#" %></th>
+          <th class="text-center"><%= sortable "lastname", "Last Name" %></th>
+          <th class="text-center"><%= sortable "firstname", "First Name" %></th>
+          <th class="text-center"><%= sortable "chinesename", "Other Name" %></th>
+          <th class="text-center"><%= sortable "dob", "Age*" %></th>
+          <th class="text-center"><%= sortable "gender", "Gender" %></th>
+          <th class="text-center"><%= sortable "countryorigin", "Country of Origin" %></th>
+          <th class="text-center"><%= sortable "parentsorigin", "Family Origin" %></th>
+          <th class="text-center"><%= sortable "email", "Email" %></th>
+          <th class="text-center"><%= sortable "mobile", "Mobile" %></th>
+          <th class="text-center"><%= sortable "occupation", "Occupation" %></th>
+          <th class="text-center"><%= sortable "fellowship", "Fellowship" %></th>
+          <th class="text-center"><%= sortable "congregation", "Congregation" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @students.each_with_index do |student, i| %>
+          <tr>
+            <td><%= (i+1) %></td>
+            <td><%= student.lastname %></td>
+            <td><%= student.firstname %></td>
+            <td><%= student.chinesename %></td>
+            <td><%= (student.dob).age %></td>
+            <td><%= student.gender %></td>
+            <td><%= student.countryorigin %></td>
+            <td><%= student.parentsorigin %></td>
+            <td><%= student.email %></td>
+            <td><%= student.mobile %></td>
+            <td><%= student.occupation %></td>
+            <td><%= student.fellowship %></td>
+            <td><%= student.congregation %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+
+  <div class="row text-center">
+    <!-- Column Chart -->
+    <div class="col-xs-6">
+      <h3>Age Of Students</h3>
+      <%= column_chart @students_bar.group(:dob).count %>
+    </div>
+    <div class="col-xs-6">
+      <h3>Gender Ratio</h3>
+      <%= pie_chart @students_bar.group(:gender).count %>
+    </div>
+    <div class="col-xs-6">
+      <h3>Gender Ratio</h3>
+      <%= pie_chart @students_bar.group(:congregation).count %>
+    </div>
+  </div>
+  <footer>
+    <p>*Rough estimate as of 1/1/2016</p>
+  </footer>
+</div>

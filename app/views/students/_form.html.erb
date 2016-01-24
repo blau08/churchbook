@@ -1,0 +1,40 @@
+<%= render "layouts/errors", :object => @student %>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+    <%= form_for @student do |f| %>
+      <%= f.text_field :lastname, class: 'form-control', placeholder: 'Last Name' %>
+      <br>
+      <%= f.text_field :firstname, class: 'form-control', placeholder: 'First Name' %>
+      <br>
+      <%= f.text_field :chinesename, class: 'form-control', placeholder: 'Other Name' %>
+      <br>
+      <%= f.text_field :dob, class: 'form-control', placeholder: 'Date Of Birth' %>
+      <br>
+      <%= f.text_field :gender, class: 'form-control', placeholder: 'Gender' %>
+      <br>
+      <%= f.text_field :countryorigin, class: 'form-control', placeholder: 'Origin Country' %>
+      <br>
+      <%= f.text_field :parentsorigin, class: 'form-control', placeholder: 'Parents Hometown' %>
+      <br>
+      <%= f.text_field :email, class: 'form-control', placeholder: 'Email' %>
+      <br>
+      <%= f.text_field :mobile, class: 'form-control', placeholder: 'Mobile' %>
+      <br>
+      <%= f.text_field :occupation, class: 'form-control', placeholder: 'Occupation' %>
+      <br>
+      <%= f.text_field :fellowship, class: 'form-control', placeholder: 'Fellowship' %>
+      <br>
+      <%= f.text_field :congregation, class: 'form-control', placeholder: 'Congregation' %>
+      <br>
+      <%= f.label :image,'Upload An Image'%>
+      <br>
+      <div id="filefield">
+        <%= f.file_field :image %>
+      </div>
+      <%= f.submit class: 'btn btn-default'%>
+    <% end %>
+    </div>
+  </div>
+</div>
