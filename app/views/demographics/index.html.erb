@@ -31,7 +31,7 @@
             <td><%= student.lastname %></td>
             <td><%= student.firstname %></td>
             <td><%= student.chinesename %></td>
-            <td><%= (student.dob).age %></td>
+            <td><%= student.age %></td>
             <td><%= student.gender %></td>
             <td><%= student.countryorigin %></td>
             <td><%= student.parentsorigin %></td>
@@ -58,8 +58,12 @@
       <%= pie_chart @students_bar.group(:gender).count %>
     </div>
     <div class="col-xs-6">
-      <h3>Gender Ratio</h3>
+      <h3>Congregation</h3>
       <%= pie_chart @students_bar.group(:congregation).count %>
+    </div>
+    <div class="col-xs-6">
+      <h3>Fellowship</h3>
+      <%= pie_chart @students_bar.group(:fellowship).count %>
     </div>
   </div>
   <footer>

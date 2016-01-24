@@ -6,11 +6,6 @@ class DemographicsController < ApplicationController
     @students_bar = Student.all
   end
 
-  def age
-    now = Time.now.utc.to_date
-    now.year - self.year - (self.change(:year => now.year) > now ? 1 : 0)
-  end
-
 
 private
 
