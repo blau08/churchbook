@@ -16,6 +16,9 @@ gem "chartkick"
 gem 'paperclip', '~> 4.1'
 gem 'bootstrap-sass'
 gem 'rmagick'
+gem "font-awesome-rails"
+gem 'lightbox2-rails'
+gem 'lightbox-bootstrap-rails'
 
 group :development do
   gem 'byebug'
