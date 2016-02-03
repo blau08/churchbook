@@ -28,7 +28,7 @@ private
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 
-  def student_params
+  def room_params
     params.require(:room).permit(:clock, :name, :description, :room)
   end
 end
