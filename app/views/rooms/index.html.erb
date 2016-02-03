@@ -1,2 +1,35 @@
-<h1>Rooms#index</h1>
-<p>Find me in app/views/rooms/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <header class="jumbotron hero-spacer text-center">
+      <h1>Reservations</h1>
+      <p>Reserve your conference room</p>
+      <% if current_user %>
+        <%= link_to "Make a reservation", new_room_path, class: "btn btn-primary" %>
+      <% end %>
+    </header>
+  </div>
+  <div class="row text-center">
+    <table id="table1" class="table">
+      <thead>
+        <tr>
+          <th class="col-md-1 text-center"><%= sortable "id ", "Date" %></th>
+          <th class="col-md-2"><%= sortable "lastname", "Event" %></th>
+          <th class="col-md-1 text-center"><%= sortable "firstname", "Room" %></th>
+          <th class="col-md-1 text-center"><%= sortable "chinesename", "Fellowship" %></th>
+          <th class="col-md-1 text-center"><%= sortable "chinesename", "Host" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @students.each_with_index do |student, i| %>
+          <tr>
+            <td><%= (i+1) %></td>
+            <td class="text-left"><%= student.lastname %></td>
+            <td><%= student.firstname %></td>
+            <td><%= student.fellowship %></td>
+            <td><%= student.chinesename %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
