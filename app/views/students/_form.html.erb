@@ -10,9 +10,25 @@
       <br>
       <%= f.text_field :chinesename, class: 'form-control', placeholder: 'Other Name' %>
       <br>
-      <%= f.date_select :dob, class: 'form-control', placeholder: 'Date Of Birth' %>
+      <div class="col-md-3 text-left">
+        Date of Birth
+      </div>
+      <div class="col-md-6">
+        <%= f.date_select :dob, class: 'form-control', placeholder: 'Date Of Birth' %>
+      </div>
       <br>
-      <%= f.text_field :gender, class: 'form-control', placeholder: 'Gender' %>
+      <br>
+      <div class="col-md-3 text-left">
+        <%= f.label :Gender %>
+
+      </div>
+      <div class="col-md-6">
+
+      <%= f.label :Gender_male, 'Male' %>
+      <%= f.radio_button :gender, "Male" %>
+      <%= f.label :Gender_female, 'Female' %>
+      <%= f.radio_button :gender, "Female" %>
+      </div>
       <br>
       <%= f.text_field :countryorigin, class: 'form-control', placeholder: 'Origin Country' %>
       <br>
@@ -24,7 +40,11 @@
       <br>
       <%= f.text_field :occupation, class: 'form-control', placeholder: 'Occupation' %>
       <br>
-      <%= f.text_field :fellowship, class: 'form-control', placeholder: 'Fellowship' %>
+      <%= f.select(:fellowship) do %>
+        <%= [['Fellowship', ""], ['LED', 'LED']].each do |c| %>
+          <%= content_tag(:option, c.first, value: c.last) %>
+          <% end %>
+        <% end %>
       <br>
       <%= f.text_field :congregation, class: 'form-control', placeholder: 'Congregation' %>
       <br>
