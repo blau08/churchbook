@@ -10,8 +10,7 @@
   width: 85%;
   margin: 0 auto !important;
 }
-select.datetime-select {
-    width:auto;
-    border: 1px solid #cccccc;
-    background-color: #ffffff;
+.date-select {
+    display: inline-block;
+    width: 30%;
 }
