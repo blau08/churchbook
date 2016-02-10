@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'rooms/index'
 
   get 'schedules/index'

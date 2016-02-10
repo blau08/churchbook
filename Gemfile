@@ -19,6 +19,8 @@ gem 'rmagick'
 gem "font-awesome-rails"
 gem 'lightbox2-rails'
 gem 'lightbox-bootstrap-rails'
+gem 'rails_admin'
+gem 'cancan'
 
 group :development do
   gem 'byebug'
