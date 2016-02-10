@@ -42,18 +42,33 @@
       <br>
       <%= f.text_field :occupation, class: 'form-control', placeholder: 'Occupation' %>
       <br>
-      <%= f.select(:fellowship) do %>
-        <%= [['Fellowship', ""], ['LED', 'LED'], ['LIGHT', 'LIGHT'], ['BULBS', 'BULBS'], ['H2O', 'H2O'], ['SOS', 'SOS'], ['EAF', 'EAF'], ['SOS', 'SOS']].each do |c| %>
-        <%= content_tag(:option, c.first, value: c.last) %>
-        <% end %>
-      <% end %>
-      <br>
+      <div class="row">
+
+          <%= f.label :fellowship_label, 'Fellowship' %>
+          <br>
+          <%= f.label :fellowship_led, 'LED'%>
+          <%= f.radio_button :fellowship, 'LED' %>
+          <%= f.label :fellowship_light, 'LIGHT' %>
+          <%= f.radio_button :fellowship, 'LIGHT' %>
+          <%= f.label :fellowship_bulbs, 'BULBS' %>
+          <%= f.radio_button :fellowship, 'BULBS' %>
+          <%= f.label :fellowship_h2o, 'H2O' %>
+          <%= f.radio_button :fellowship, 'H2O' %>
+          <%= f.label :fellowship_eaf, 'EAF' %>
+          <%= f.radio_button :fellowship, 'EAF' %>
+          <%= f.label :fellowship_sos, 'SOS' %>
+          <%= f.radio_button :fellowship, 'SOS' %>
+          <%= f.label :fellowship_dorcas, 'Dorcas' %>
+          <%= f.radio_button :fellowship, 'Dorcas' %>
+          <%= f.label :fellowship_joshua, 'Joshua' %>
+          <%= f.radio_button :fellowship, 'Joshua' %>
+
+      </div>
       <br>
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-6 col-md-offset-3">
           <%= f.label :congregation_label, 'Congregation' %>
-        </div>
-        <div class="col-md-6">
+          <br>
           <%= f.label :congregation_chinese, 'Chinese' %>
           <%= f.radio_button :congregation, 'Chinese' %>
           <%= f.label :congregation_english, 'English' %>
