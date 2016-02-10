@@ -3,32 +3,34 @@
 <div class="container text-center">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-    <%= form_for @student do |f| %>
+      <%= form_for @student do |f| %>
       <%= f.text_field :lastname, class: 'form-control', placeholder: 'Last Name' %>
       <br>
       <%= f.text_field :firstname, class: 'form-control', placeholder: 'First Name' %>
       <br>
       <%= f.text_field :chinesename, class: 'form-control', placeholder: 'Other Name' %>
       <br>
-      <div class="col-md-3 text-left">
-        Date of Birth
-      </div>
-      <div class="col-md-6">
-        <%= f.date_select :dob, class: 'form-control', placeholder: 'Date Of Birth' %>
+
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.label :dob_dob, 'Date of Birth' %>
+          <br>
+          <%= f.date_select :dob %>
+        </div>
       </div>
       <br>
-      <br>
-      <div class="col-md-3 text-left">
-        <%= f.label :Gender %>
 
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.label :gender_gender, 'Gender' %>
+          <br>
+          <%= f.label :Gender_male, 'Male' %>
+          <%= f.radio_button :gender, "Male" %>
+          <%= f.label :Gender_female, 'Female' %>
+          <%= f.radio_button :gender, "Female" %>
+        </div>
       </div>
-      <div class="col-md-6">
 
-      <%= f.label :Gender_male, 'Male' %>
-      <%= f.radio_button :gender, "Male" %>
-      <%= f.label :Gender_female, 'Female' %>
-      <%= f.radio_button :gender, "Female" %>
-      </div>
       <br>
       <%= f.text_field :countryorigin, class: 'form-control', placeholder: 'Origin Country' %>
       <br>
@@ -41,20 +43,37 @@
       <%= f.text_field :occupation, class: 'form-control', placeholder: 'Occupation' %>
       <br>
       <%= f.select(:fellowship) do %>
-        <%= [['Fellowship', ""], ['LED', 'LED']].each do |c| %>
-          <%= content_tag(:option, c.first, value: c.last) %>
-          <% end %>
+        <%= [['Fellowship', ""], ['LED', 'LED'], ['LIGHT', 'LIGHT'], ['BULBS', 'BULBS'], ['H2O', 'H2O'], ['SOS', 'SOS'], ['EAF', 'EAF'], ['SOS', 'SOS']].each do |c| %>
+        <%= content_tag(:option, c.first, value: c.last) %>
         <% end %>
+      <% end %>
       <br>
-      <%= f.text_field :congregation, class: 'form-control', placeholder: 'Congregation' %>
       <br>
-      <%= f.label :image,'Upload An Image'%>
-      <br>
-      <div id="filefield">
-        <%= f.file_field :image %>
+      <div class="row">
+        <div class="col-md-3">
+          <%= f.label :congregation_label, 'Congregation' %>
+        </div>
+        <div class="col-md-6">
+          <%= f.label :congregation_chinese, 'Chinese' %>
+          <%= f.radio_button :congregation, 'Chinese' %>
+          <%= f.label :congregation_english, 'English' %>
+          <%= f.radio_button :congregation, 'English' %>
+          <%= f.label :congregation_mandarin, 'Mandarin' %>
+          <%= f.radio_button :congregation, 'Mandarin' %>
+        </div>
       </div>
+      <br>
+      <div class="row text-center">
+        <div class="col-md-6 col-md-offset-3">
+          <%= f.label :image,'Upload An Image'%>
+          <div class="center">
+            <%= f.file_field :image %>
+          </div>
+        </div>
+      </div>
+      <br>
       <%= f.submit class: 'btn btn-default'%>
-    <% end %>
+      <% end %>
     </div>
   </div>
 </div>
