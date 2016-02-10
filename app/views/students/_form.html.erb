@@ -15,7 +15,7 @@
         <div class="col-md-6 col-md-offset-3">
           <%= f.label :dob_dob, 'Date of Birth' %>
           <br>
-          <%= f.date_select :dob %>
+          <%= f.date_select :dob, {:order => [:month, :day, :year],:prompt => true, :start_year => 1920, :end_year => Time.now.year} %>
         </div>
       </div>
       <br>

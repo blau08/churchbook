@@ -49,21 +49,21 @@
 
   <div class="row text-center">
     <!-- Column Chart -->
-    <div class="col-xs-6">
+    <div class="col-md-6">
       <h3>Age Of Students</h3>
       <%= column_chart @students_bar.group(:dob).count %>
     </div>
-    <div class="col-xs-6">
+    <div class="col-md-6">
       <h3>Gender Ratio</h3>
-      <%= pie_chart @students_bar.group(:gender).count %>
+      <%= pie_chart @students_bar.group(:gender).count, library: {legend: {position: "bottom"}} %>
     </div>
-    <div class="col-xs-6">
+    <div class="col-md-6">
       <h3>Congregation</h3>
-      <%= pie_chart @students_bar.group(:congregation).count %>
+      <%= pie_chart @students_bar.group(:congregation).count, library: {legend: {position: "bottom"}} %>
     </div>
-    <div class="col-xs-6">
+    <div class="col-md-6">
       <h3>Fellowship</h3>
-      <%= pie_chart @students_bar.group(:fellowship).count %>
+      <%= pie_chart @students_bar.group(:fellowship).count, library: {legend: {position: "bottom"}} %>
     </div>
   </div>
   <footer>
