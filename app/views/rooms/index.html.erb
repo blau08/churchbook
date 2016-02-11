@@ -21,7 +21,7 @@
       <tbody>
         <% @rooms.each do |room| %>
           <tr>
-            <td><%= room.clock.strftime '%x - %l:%M %P' %></td>
+            <td><%= room.clock.strftime '%m/%d/%Y - %l:%M %P' %></td>
             <td class='text-left'><%= room.description %></td>
             <td><%= room.room %></td>
             <td><%= room.name %></td>
