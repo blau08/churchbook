@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @students = Student.all
+    @rooms = Room.all.order(sort_column + " " + sort_direction)
   end
 
   def new
@@ -21,7 +21,7 @@ class RoomsController < ApplicationController
 private
 
   def sort_column
-    Student.column_names.include?(params[:sort]) ? params[:sort] : "lastname"
+    Room.column_names.include?(params[:sort]) ? params[:sort] : "clock"
   end
 
   def sort_direction

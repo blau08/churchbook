@@ -12,21 +12,19 @@
     <table id="table1" class="table">
       <thead>
         <tr>
-          <th class="col-md-1 text-center"><%= sortable "id ", "Date" %></th>
-          <th class="col-md-2"><%= sortable "lastname", "Event" %></th>
-          <th class="col-md-1 text-center"><%= sortable "firstname", "Room" %></th>
-          <th class="col-md-1 text-center"><%= sortable "chinesename", "Fellowship" %></th>
-          <th class="col-md-1 text-center"><%= sortable "chinesename", "Host" %></th>
+          <th class="col-md-1 text-center"><%= sortable "clock", "Date" %></th>
+          <th class="col-md-2"><%= sortable "description", "Description" %></th>
+          <th class="col-md-1 text-center"><%= sortable "room", "Room" %></th>
+          <th class="col-md-1 text-center"><%= sortable "name", "Host" %></th>
         </tr>
       </thead>
       <tbody>
-        <% @students.each_with_index do |student, i| %>
+        <% @rooms.each do |room| %>
           <tr>
-            <td><%= (i+1) %></td>
-            <td class="text-left"><%= student.lastname %></td>
-            <td><%= student.firstname %></td>
-            <td><%= student.fellowship %></td>
-            <td><%= student.chinesename %></td>
+            <td><%= room.clock.strftime '%x - %l:%M %P' %></td>
+            <td class='text-left'><%= room.description %></td>
+            <td><%= room.room %></td>
+            <td><%= room.name %></td>
           </tr>
         <% end %>
       </tbody>
