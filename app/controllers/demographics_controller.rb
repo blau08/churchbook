@@ -4,6 +4,8 @@ class DemographicsController < ApplicationController
   def index
     @students = Student.all.order(sort_column + " " + sort_direction)
     @students_bar = Student.all
+    @student_age = Student.build_age
+    binding.pry
   end
 
 
