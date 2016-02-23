@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   resources :homes
   resources :schedules
   resources :rooms
+
+  resources :photos, only: [:index, :show, :new, :create, :destroy]
+
 end

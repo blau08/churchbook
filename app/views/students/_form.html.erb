@@ -4,9 +4,9 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <%= form_for @student do |f| %>
-      <%= f.text_field :lastname, class: 'form-control', placeholder: 'Last Name' %>
+      <%= f.text_field :lastname, class: 'form-control', placeholder: 'Last Name', required: true %>
       <br>
-      <%= f.text_field :firstname, class: 'form-control', placeholder: 'First Name' %>
+      <%= f.text_field :firstname, class: 'form-control', placeholder: 'First Name', required: true %>
       <br>
       <%= f.text_field :chinesename, class: 'form-control', placeholder: 'Other Name' %>
       <br>
@@ -15,7 +15,7 @@
         <div class="col-md-6 col-md-offset-3">
           <%= f.label :dob_dob, 'Date of Birth' %>
           <br>
-          <%= f.date_select :dob, {:order => [:month, :day, :year],:prompt => true, :start_year => 1920, :end_year => Time.now.year} %>
+          <%= f.date_select :dob, {:order => [:month, :day, :year],:prompt => true, :start_year => 1920, :end_year => Time.now.year}, required: true %>
         </div>
       </div>
       <br>

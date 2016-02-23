@@ -1,3 +1,23 @@
-// Place all the styles related to the schedules controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body, html {
+  margin: 0;
+
+}
+
+#left {
+  position: absolute;
+  top: 28em;
+  bottom: 0;
+  left: 12%;
+  width: 50%;
+  overflow-y: scroll;
+}
+
+#right {
+  position: absolute;
+  top: 28em;
+  bottom: 0;
+  right: 12%;
+  overflow-y: scroll;
+  width: 25%;
+}
