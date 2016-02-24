@@ -15,12 +15,14 @@ class Student < ActiveRecord::Base
   def self.build_age
     count_of_ages = ( ActiveRecord::Base.connection.exec_query("
     SELECT
-      CASE when date_part('year', age(dob)) between 0 and 10 then '0-9'
-           when date_part('year', age(dob)) between 10 and 20 then '10-19'
-           when date_part('year', age(dob)) between 20 and 30 then '20-29'
-           when date_part('year', age(dob)) between 30 and 40 then '30-39'
-           when date_part('year', age(dob)) between 40 and 50 then '40-49'
-           when date_part('year', age(dob)) between 50 and 99 then '50+'
+      CASE
+        when date_part('year', age(dob)) between 0 and 9 then '0-9'
+        when date_part('year', age(dob)) between 10 and 19 then '10-19'
+        when date_part('year', age(dob)) between 20 and 29 then '20-29'
+        when date_part('year', age(dob)) between 30 and 39 then '30-39'
+        when date_part('year', age(dob)) between 40 and 49 then '40-49'
+        when date_part('year', age(dob)) between 50 and 59 then '50-59'
+        when date_part('year', age(dob)) between 60 and 99 then '60+'
       END
       AS calc_age, COUNT(*) AS count_all
     FROM students GROUP BY calc_age;")).rows
