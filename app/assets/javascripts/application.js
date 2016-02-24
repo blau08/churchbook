@@ -14,6 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
-//= require lightbox-bootstrap
+
 //= require moment
 //= require bootstrap-datetimepicker
+
+$(function () {
+  $('#datetimepicker1').datetimepicker({
+    format: 'DD/MM/YYYY HH:mm',
+    sideBySide: true
+  });
+});
