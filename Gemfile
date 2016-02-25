@@ -25,6 +25,7 @@ gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 gem 'flickraw'
 gem 'figaro'
+gem 'jquery-turbolinks'
 
 group :development do
   gem 'byebug'

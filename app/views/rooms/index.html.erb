@@ -12,7 +12,7 @@
     <table id="table1" class="table">
       <thead>
         <tr>
-          <th class="col-md-1 text-center"><%= sortable "clock", "Date" %></th>
+          <th class="col-md-1 text-left"><%= sortable "clock", "Date" %></th>
           <th class="col-md-2"><%= sortable "description", "Description" %></th>
           <th class="col-md-1 text-center"><%= sortable "room", "Room" %></th>
           <th class="col-md-1 text-center"><%= sortable "name", "Host" %></th>
@@ -21,7 +21,7 @@
       <tbody>
         <% @rooms.each do |room| %>
           <tr>
-            <td><%= room.clock.strftime '%m/%d/%Y - %l:%M %P' %></td>
+            <td class="text-left"><%= room.clock.strftime '%m/%d/%Y - %l:%M %P' %></td>
             <td class='text-left'><%= room.description %></td>
             <td><%= room.room %></td>
             <td><%= room.name %></td>
