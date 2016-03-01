@@ -5,9 +5,7 @@ Rails.application.routes.draw do
 
   get 'schedules/index'
 
-  devise_for :users do
-    delete 'logout' => 'sessions#destroy', :as => :destroy_user_session
-  end
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   root 'homes#index'
   resources :students

@@ -26,6 +26,10 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 gem 'flickraw'
 gem 'figaro'
 gem 'jquery-turbolinks'
+gem 'omniauth-facebook'
+gem 'bootstrap-social-rails', '~> 4.8'
+gem 'font-awesome-sass'
+gem 'omniauth-google-oauth2'
 
 group :development do
   gem 'byebug'

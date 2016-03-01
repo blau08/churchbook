@@ -239,7 +239,8 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-
+  config.omniauth :facebook, "1574944816158882", "edf9ec7deaecdcd301e35c0edfaaee3c", scope: 'email,public_profile', info_fields: 'email'
+  config.omniauth :google_oauth2, "620656901588-rjls5m12mq7nppii9imt122uf4v0oe2j.apps.googleusercontent.com", "SrWjGaiS_vUVeJrwhAngLDgH", {}
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
