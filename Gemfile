@@ -30,6 +30,7 @@ gem 'omniauth-facebook'
 gem 'bootstrap-social-rails', '~> 4.8'
 gem 'font-awesome-sass'
 gem 'omniauth-google-oauth2'
+gem 'yaml_db'
 
 group :development do
   gem 'byebug'
