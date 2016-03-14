@@ -12,7 +12,9 @@
           <th class="text-center"><%= sortable "id ", "#" %></th>
           <th class="text-center"><%= sortable "lastname", "Last" %></th>
           <th class="text-center"><%= sortable "firstname", "First" %></th>
+          <%  if current_user %>
           <th class="text-center"><%= sortable "dob", "Age" %></th>
+          <% end %>
           <th class="text-center"><%= sortable "gender", "Gender" %></th>
           <th class="text-center"><%= sortable "countryorigin", "Birthplace" %></th>
           <th class="text-center"><%= sortable "occupation", "Occupation" %></th>
@@ -26,7 +28,9 @@
             <td><%= (i+1) %></td>
             <td><%= student.lastname %></td>
             <td><%= student.firstname %></td>
+            <%  if current_user %>
             <td><%= student.current_age %></td>
+            <% end %>
             <td><%= student.gender %></td>
             <td><%= student.countryorigin %></td>
             <td><%= student.occupation %></td>
